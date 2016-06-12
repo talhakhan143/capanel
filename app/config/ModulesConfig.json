@@ -1,0 +1,63 @@
+{
+  "dashboard": {
+    "package": "dashboard",
+    "isDefault" : true,
+    "title": "Dashboard",
+    "icon": "fa fa-area-chart",
+    "db_config":{
+      "table" : "",
+      "prefix" : ""
+    },
+    "upload_dir" : "",
+    "urls" : {
+      "ui":{
+        "manage" : "manage"
+      },
+      "ctrls":{}
+    }
+  },
+  "banners": {
+    "package": "banners",
+    "title": "Banners",
+    "icon": "fa fa-image",
+    "db_config":{
+      "table" : "tbl_banners",
+      "prefix" : "ban_"
+    },
+    "upload_dir" : "banners/",
+    "urls" : {
+      "ui":{
+        "create" : "add",
+        "edit" : "edit",
+        "manage" : "manage"
+      },
+      "ctrls":{
+        "add" : "create",
+        "edit" : "update",
+        "delete" : "delete"
+      }
+    }
+  },
+  "portfolio": {
+    "package": "portfolio ",
+    "title": "Portfolio",
+    "icon": "fa fa-briefcase",
+    "db_config":{
+      "table" : "tbl_portfolio",
+      "prefix" : "port_"
+    },
+    "upload_dir" : "portfolio/",
+    "urls" : {
+      "ui":{
+        "create" : "add",
+        "edit" : "edit",
+        "manage" : "manage"
+      },
+      "ctrls":{
+        "add" : "create",
+        "edit" : "update",
+        "delete" : "delete"
+      }
+    }
+  }
+}
