@@ -27,6 +27,7 @@ class CA_Capanel extends CA_Base{
         foreach ($this->modules_config as $name => $module){
             if(isset($module->isDefault) and $module->isDefault){
                 $this->defaultModule = $module;
+                break;
             }
         }
 
@@ -34,7 +35,7 @@ class CA_Capanel extends CA_Base{
     }
 
     public function getDefaultModuleUrl(){
-        return $this->base_url("module/".$this->getDefaultModule()->package."/".$this->getDefaultModule()->urls->ui->manage);
+        return $this->base_url("module/".$this->getDefaultModule()->package);
     }
 
     public function ca_redirect($url = ""){

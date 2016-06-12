@@ -22,7 +22,7 @@ class CA_Mhandler extends CA_Capanel{
             $this->viewName = $this->uri->segment(4);
         }else{
             $uiArray = (Array) $this->getUiUrls();
-            $this->viewName = current($uiArray);
+            $this->viewName = current(array_keys($uiArray));
         }
     }
 

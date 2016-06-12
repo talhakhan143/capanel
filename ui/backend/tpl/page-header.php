@@ -1,5 +1,5 @@
 <header class="page-header">
-    <h2>Dashboard</h2>
+    <h2><?=$base_class->getModule()->title?></h2>
 
     <div class="right-wrapper pull-right" style="margin-right: 20px;">
         <ol class="breadcrumbs">

@@ -1,9 +1,10 @@
 <header class="header">
     <div class="logo-container">
         <a href="../" class="logo">
-            <img src="images/logo.png" height="35" alt="Porto Admin" />
+            <img src="images/logo.png" height="35" alt="Porto Admin"/>
         </a>
-        <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
+        <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html"
+             data-fire-event="sidebar-left-opened">
             <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
         </div>
     </div>
@@ -43,7 +44,8 @@
                                     <span class="message pull-right text-dark">60%</span>
                                 </p>
                                 <div class="progress progress-xs light">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+                                         aria-valuemax="100" style="width: 60%;"></div>
                                 </div>
                             </li>
 
@@ -53,7 +55,8 @@
                                     <span class="message pull-right text-dark">98%</span>
                                 </p>
                                 <div class="progress progress-xs light">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" style="width: 98%;"></div>
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="98" aria-valuemin="0"
+                                         aria-valuemax="100" style="width: 98%;"></div>
                                 </div>
                             </li>
 
@@ -63,7 +66,8 @@
                                     <span class="message pull-right text-dark">33%</span>
                                 </p>
                                 <div class="progress progress-xs light mb-xs">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%;"></div>
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0"
+                                         aria-valuemax="100" style="width: 33%;"></div>
                                 </div>
                             </li>
                         </ul>
@@ -87,7 +91,7 @@
                             <li>
                                 <a href="#" class="clearfix">
                                     <figure class="image">
-                                        <img src="images/!sample-user.jpg" alt="Joseph Doe Junior" class="img-circle" />
+                                        <img src="images/!sample-user.jpg" alt="Joseph Doe Junior" class="img-circle"/>
                                     </figure>
                                     <span class="title">Joseph Doe</span>
                                     <span class="message">Lorem ipsum dolor sit.</span>
@@ -96,7 +100,7 @@
                             <li>
                                 <a href="#" class="clearfix">
                                     <figure class="image">
-                                        <img src="images/!sample-user.jpg" alt="Joseph Junior" class="img-circle" />
+                                        <img src="images/!sample-user.jpg" alt="Joseph Junior" class="img-circle"/>
                                     </figure>
                                     <span class="title">Joseph Junior</span>
                                     <span class="message truncate">Truncated message. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet lacinia orci. Proin vestibulum eget risus non luctus. Nunc cursus lacinia lacinia. Nulla molestie malesuada est ac tincidunt. Quisque eget convallis diam, nec venenatis risus. Vestibulum blandit faucibus est et malesuada. Sed interdum cursus dui nec venenatis. Pellentesque non nisi lobortis, rutrum eros ut, convallis nisi. Sed tellus turpis, dignissim sit amet tristique quis, pretium id est. Sed aliquam diam diam, sit amet faucibus tellus ultricies eu. Aliquam lacinia nibh a metus bibendum, eu commodo eros commodo. Sed commodo molestie elit, a molestie lacus porttitor id. Donec facilisis varius sapien, ac fringilla velit porttitor et. Nam tincidunt gravida dui, sed pharetra odio pharetra nec. Duis consectetur venenatis pharetra. Vestibulum egestas nisi quis elementum elementum.</span>
@@ -105,7 +109,7 @@
                             <li>
                                 <a href="#" class="clearfix">
                                     <figure class="image">
-                                        <img src="images/!sample-user.jpg" alt="Joe Junior" class="img-circle" />
+                                        <img src="images/!sample-user.jpg" alt="Joe Junior" class="img-circle"/>
                                     </figure>
                                     <span class="title">Joe Junior</span>
                                     <span class="message">Lorem ipsum dolor sit.</span>
@@ -114,7 +118,7 @@
                             <li>
                                 <a href="#" class="clearfix">
                                     <figure class="image">
-                                        <img src="images/!sample-user.jpg" alt="Joseph Junior" class="img-circle" />
+                                        <img src="images/!sample-user.jpg" alt="Joseph Junior" class="img-circle"/>
                                     </figure>
                                     <span class="title">Joseph Junior</span>
                                     <span class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet lacinia orci. Proin vestibulum eget risus non luctus. Nunc cursus lacinia lacinia. Nulla molestie malesuada est ac tincidunt. Quisque eget convallis diam.</span>
@@ -122,7 +126,7 @@
                             </li>
                         </ul>
 
-                        <hr />
+                        <hr/>
 
                         <div class="text-right">
                             <a href="#" class="view-more">View All</a>
@@ -173,7 +177,7 @@
                             </li>
                         </ul>
 
-                        <hr />
+                        <hr/>
 
                         <div class="text-right">
                             <a href="#" class="view-more">View All</a>
@@ -188,7 +192,8 @@
         <div id="userbox" class="userbox">
             <a href="#" data-toggle="dropdown">
                 <figure class="profile-picture">
-                    <img src="images/!logged-user.jpg" alt="Joseph Doe" class="img-circle" data-lock-picture="images/!logged-user.jpg" />
+                    <img src="images/!logged-user.jpg" alt="Joseph Doe" class="img-circle"
+                         data-lock-picture="images/!logged-user.jpg"/>
                 </figure>
                 <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
                     <span class="name">John Doe Junior</span>
@@ -202,13 +207,15 @@
                 <ul class="list-unstyled">
                     <li class="divider"></li>
                     <li>
-                        <a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i class="fa fa-user"></i> My Profile</a>
+                        <a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i class="fa fa-user"></i> My
+                            Profile</a>
                     </li>
                     <li>
-                        <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
+                        <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i>
+                            Lock Screen</a>
                     </li>
                     <li>
-                        <a role="menuitem" tabindex="-1" href="pages-signin.html"><i class="fa fa-power-off"></i> Logout</a>
+                        <a role="menuitem" tabindex="-1" href="<?=$base_class->base_url("login/logout")?>"><i class="fa fa-power-off"></i> Logout</a>
                     </li>
                 </ul>
             </div>
