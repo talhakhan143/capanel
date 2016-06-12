@@ -27,9 +27,9 @@
     "upload_dir" : "banners/",
     "urls" : {
       "ui":{
+        "manage" : "manage",
         "create" : "add",
-        "edit" : "edit",
-        "manage" : "manage"
+        "edit" : "edit"
       },
       "ctrls":{
         "add" : "create",
@@ -49,9 +49,9 @@
     "upload_dir" : "portfolio/",
     "urls" : {
       "ui":{
+        "manage" : "manage",
         "create" : "add",
-        "edit" : "edit",
-        "manage" : "manage"
+        "edit" : "edit"
       },
       "ctrls":{
         "add" : "create",
