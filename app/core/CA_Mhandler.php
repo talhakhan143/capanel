@@ -45,12 +45,41 @@ class CA_Mhandler extends CA_Capanel{
         return $this->module;
     }
 
-    public function getUiUrls(){
-        return $this->getModule()->urls->ui;
+    public function getUploadDir(){
+        return "assets/uploads/".$this->getModule()->upload_dir;
+
     }
 
-    public function getCtrlUrls(){
-        return $this->getModule()->urls->ctrls;
+    public function getDbPrefix(){
+        return $this->getDbConfig()->prefix;
+    }
+
+    public function getDbTable(){
+        return $this->getDbConfig()->table;
+    }
+
+    public function getUiUrls($uiName = false, $buildLink = false){
+        $uis = $this->getModule()->urls->ui;
+        if(!$uiName){
+            return $uis;
+        }else{
+            $uis = (Array) $uis;
+            return ($buildLink ? $this->module_base_url($uis[$uiName]) : $uis[$uiName]);
+        }
+    }
+
+    public function getCtrlUrls($ctrlName = false, $buildLink = false){
+        $ctrls = $this->getModule()->urls->ctrls;
+        if(!$ctrlName){
+            return $ctrls;
+        }else{
+            $ctrls = (Array) $ctrls;
+            return ($buildLink ? $this->module_base_url($ctrls[$ctrlName]) : $ctrls[$ctrlName]);
+        }
+    }
+
+    public function module_base_url($url = false){
+        return $this->base_url(($url ? "module/".$this->moduleName."/".$url : "module/".$this->moduleName));
     }
 
     public function getDbConfig(){
@@ -72,5 +101,17 @@ class CA_Mhandler extends CA_Capanel{
             $this->loadView("tpl/".$specificPageVendor);
         }
         $this->loadView("jsInits","backend/tpl");
+    }
+
+    public function processPostPrefix(){
+        foreach($this->getPostData() as $k => $v){
+            $_POST[$this->getDbConfig()->prefix.$k] = $v;
+            unset($_POST[$k]);
+        }
+
+        foreach($this->getPostFilesData() as $k => $v){
+            $_FILES[$this->getDbConfig()->prefix.$k] = $v;
+            unset($_FILES[$k]);
+        }
     }
 }

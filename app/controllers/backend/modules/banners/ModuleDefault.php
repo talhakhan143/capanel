@@ -16,7 +16,7 @@ class ModuleDefault extends CA_Mhandler
 
     public function index()
     {
-        $this->loadView("manage");
+        $this->loadCurrentView();
     }
 
     public function manage()
@@ -24,8 +24,20 @@ class ModuleDefault extends CA_Mhandler
         $this->loadCurrentView();
     }
 
-    public function create()
+    public function add()
     {
+        $this->setViewParam("frmAction",$this->getCtrlUrls("add",true));
         $this->loadCurrentView();
+    }
+
+    public function create(){
+        $this->processPostPrefix();
+        $upload = $this->uploadFile($this->getDbPrefix()."image",$this->getUploadDir());
+        $postData = $this->getPostData();
+        if(!$upload["error"]){
+            $postData[$this->getDbPrefix()."image"] = $upload['uploadData']["file_name"];
+        }
+        $this->Dbo->saveData($this->getDbTable(),$postData);
+        redirect($this->getUiUrls("manage",true));
     }
 }

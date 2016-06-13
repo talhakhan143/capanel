@@ -5,3 +5,6 @@
 <script src="vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 <script src="vendor/magnific-popup/magnific-popup.js"></script>
 <script src="vendor/jquery-placeholder/jquery.placeholder.js"></script>
+
+<script src="vendor/autosize/autosize.js"></script>
+<script src="vendor/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>

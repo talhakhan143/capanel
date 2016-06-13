@@ -1,0 +1,5 @@
+/* Add here all your CSS customizations */
+$theme-color: #0088CC;
+ul.nav-main > li.nav-active > a *{
+  color: $theme-color;
+}

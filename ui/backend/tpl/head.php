@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.css" />
 <link rel="stylesheet" href="vendor/bootstrap-datepicker/css/datepicker3.css" />
 <link rel="stylesheet" href="vendor/pnotify/pnotify.custom.css" />
+<link rel="stylesheet" href="vendor/bootstrap-fileupload/bootstrap-fileupload.min.css" />
 
 <!-- Theme CSS -->
 <link rel="stylesheet" href="stylesheets/theme.css" />

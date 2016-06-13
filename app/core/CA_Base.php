@@ -55,4 +55,51 @@ class CA_Base extends CI_Controller{
     public function printJsonResponse(){
         echo json_encode($this->jsonResponse);
     }
+
+    public function getPostData(){
+        return $this->input->post();
+    }
+
+    public function getPostFilesData(){
+        return $_FILES;
+    }
+
+    public function getGetData(){
+        return $this->input->get();
+    }
+
+    public function getSession(){
+        return $this->session;
+    }
+
+    public function uploadFile($fieldName,$dir = "./uploads/",$allowed_types = "gif|jpg|png|jpeg",$maxSize = 2,$config = array()){
+        $this->load->library('upload');
+
+        $config['upload_path']  =  $dir;
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config['max_size'] = $maxSize * 1024;
+        $config['encrypt_name'] = true;
+
+        $returnData = array(
+          "error" => true
+        );
+
+        if(!file_exists($dir)){
+            mkdir($dir,0777,true);
+        }
+
+        $this->upload->initialize($config);
+
+        if (!$this->upload->do_upload($fieldName))
+        {
+            $returnData["errorData"] = $this->upload->display_errors();
+        }
+        else
+        {
+            $returnData['error'] = false;
+            $returnData["uploadData"] = $this->upload->data();
+        }
+
+        return $returnData;
+    }
 }

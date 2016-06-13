@@ -5,10 +5,10 @@
         <ol class="breadcrumbs">
             <li>
                 <a href="index.html">
-                    <i class="fa fa-home"></i>
+                    <i class="<?=$base_class->getModule()->icon?>"></i>
                 </a>
             </li>
-            <li><span><?=$pageTitle?></span></li>
+            <li><span><?=$base_class->getModule()->title?></span></li>
         </ol>
 
     </div>

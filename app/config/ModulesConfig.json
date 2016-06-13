@@ -28,7 +28,7 @@
     "urls" : {
       "ui":{
         "manage" : "manage",
-        "create" : "add",
+        "add" : "add",
         "edit" : "edit"
       },
       "ctrls":{

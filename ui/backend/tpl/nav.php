@@ -17,7 +17,7 @@
             <nav id="menu" class="nav-main" role="navigation">
                 <ul class="nav nav-main">
                     <?php foreach ($base_class->modules_config as $module){ ?>
-                    <li class="nav-active">
+                    <li class="<?=($module->package == $base_class->getModule()->package ? "nav-active" : "")?>">
                         <a href="<?=$base_class->base_url("module/".$module->package)?>">
                             <i class="<?=$module->icon?>" aria-hidden="true"></i>
                             <span><?=$module->title?></span>
