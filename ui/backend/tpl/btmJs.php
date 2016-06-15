@@ -8,3 +8,11 @@
 
 <script src="vendor/autosize/autosize.js"></script>
 <script src="vendor/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
+
+<script src="vendor/select2/select2.js"></script>
+<script src="vendor/jquery-datatables/media/js/jquery.dataTables.js"></script>
+<script src="vendor/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
+<script src="vendor/jquery-datatables-bs3/assets/js/datatables.js"></script>
+
+<script src="javascripts/custom/backend.js"></script>
+

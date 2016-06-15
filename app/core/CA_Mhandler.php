@@ -23,6 +23,7 @@ class CA_Mhandler extends CA_Capanel{
         }else{
             $uiArray = (Array) $this->getUiUrls();
             $this->viewName = current(array_keys($uiArray));
+            redirect($this->getUiUrls($this->viewName,true));
         }
     }
 
@@ -45,13 +46,21 @@ class CA_Mhandler extends CA_Capanel{
         return $this->module;
     }
 
-    public function getUploadDir(){
-        return "assets/uploads/".$this->getModule()->upload_dir;
+    public function getUploadDir($view = false){
+        if(!$view){
+            return "assets/uploads/".$this->getModule()->upload_dir;
+        }else{
+            return "../uploads/".$this->getModule()->upload_dir;
+        }
 
     }
 
-    public function getDbPrefix(){
-        return $this->getDbConfig()->prefix;
+    public function getDbPrefix($fieldName = false){
+        if(!$fieldName){
+            return $this->getDbConfig()->prefix;
+        }else{
+            return $this->getDbConfig()->prefix.$fieldName;
+        }
     }
 
     public function getDbTable(){
@@ -113,5 +122,11 @@ class CA_Mhandler extends CA_Capanel{
             $_FILES[$this->getDbConfig()->prefix.$k] = $v;
             unset($_FILES[$k]);
         }
+    }
+
+    public function redirectToDefault(){
+        $uiArray = (Array) $this->getUiUrls();
+        $this->viewName = current(array_keys($uiArray));
+        redirect($this->getUiUrls($this->viewName,true));
     }
 }

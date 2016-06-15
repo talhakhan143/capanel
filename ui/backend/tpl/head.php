@@ -21,6 +21,10 @@
 <link rel="stylesheet" href="vendor/pnotify/pnotify.custom.css" />
 <link rel="stylesheet" href="vendor/bootstrap-fileupload/bootstrap-fileupload.min.css" />
 
+
+<link rel="stylesheet" href="vendor/select2/select2.css" />
+<link rel="stylesheet" href="vendor/jquery-datatables-bs3/assets/css/datatables.css" />
+
 <!-- Theme CSS -->
 <link rel="stylesheet" href="stylesheets/theme.css" />
 

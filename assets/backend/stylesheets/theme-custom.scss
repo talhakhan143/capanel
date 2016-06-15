@@ -3,3 +3,16 @@ $theme-color: #0088CC;
 ul.nav-main > li.nav-active > a *{
   color: $theme-color;
 }
+a{
+  &,&:active,&:focus{
+    color: #000000;
+  }
+}
+
+.data-table a i,.light-box a i{
+  font-size: 20px;
+}
+
+.light-box.edit-form a i{
+  font-size: 35px;
+}
