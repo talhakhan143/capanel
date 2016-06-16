@@ -75,4 +75,31 @@ class ModuleDefault extends CA_Mhandler
         ));
         $this->redirectToDefault();
     }
+
+    public function delete($id = false){
+        if($id){
+            $curData = $this->Dbo->getData($this->getDbTable(),"*",array(
+                $this->getDbPrefix("id") => $id
+            ),false,false,false,true);
+            if(count($curData) > 0){
+                $del = $this->Dbo->delData($this->getDbTable(),array(
+                    $this->getDbPrefix("id") => $id
+                ));
+                if($del){
+                    if(file_exists($this->getUploadDir().$curData[$this->getDbPrefix("image")])){
+                        unlink($this->getUploadDir().$curData[$this->getDbPrefix("image")]);
+                    }
+                    $this->setJsonResponse("message","Deleted Successfully!");
+                    $this->setJsonResponse("error",false);
+                }else{
+                    $this->setJsonResponse("message","There was an error while deleting your record!");
+                }
+            }else{
+                $this->setJsonResponse("message","Data not exists!");
+            }
+        }else{
+            $this->setJsonResponse("message","Invalid Parameters!");
+        }
+        $this->printJsonResponse();
+    }
 }

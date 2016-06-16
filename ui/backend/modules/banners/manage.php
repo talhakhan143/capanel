@@ -47,7 +47,7 @@
                                 </a>
                             </td>
                             <td class="center"><a href="<?= $base_class->getUiUrls("edit", true) ?>/<?=$item[$base_class->getDbPrefix("id")]?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
-                            <td class="center"><a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                            <td class="center"><a href="#" onclick="deleteGrid('<?=$base_class->getCtrlUrls("delete", true)?>/<?=$item[$base_class->getDbPrefix("id")]?>',this)"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
                         </tr>
                         <?php $sno++;
                         } ?>

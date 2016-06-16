@@ -38,6 +38,6 @@ class Dbo extends CA_Model
         if (!$tbl) {
             $tbl = $this->tableName;
         }
-        return parent::saveData($tbl, $where);
+        return parent::delData($tbl, $where);
     }
 }
