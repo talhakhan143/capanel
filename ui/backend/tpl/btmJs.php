@@ -14,6 +14,7 @@
 <script src="vendor/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
 <script src="vendor/jquery-datatables-bs3/assets/js/datatables.js"></script>
 <script src="vendor/pnotify/pnotify.custom.js"></script>
+<script src="vendor/switch-button/switch.js"></script>
 
 <script src="javascripts/custom/backend.js"></script>
 

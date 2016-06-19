@@ -129,4 +129,31 @@ class CA_Mhandler extends CA_Capanel{
         $this->viewName = current(array_keys($uiArray));
         redirect($this->getUiUrls($this->viewName,true));
     }
+
+    public function updateStatus($id = false){
+        if($id) {
+            $curData = $this->Dbo->getData($this->getDbTable(), "*", array(
+                $this->getDbPrefix("id") => $id
+            ), false, false, false, true);
+            if(count($curData) > 0){
+                $newStatus = ($curData[$this->getDbPrefix("status")] > 0 ? 0 : 1);
+                $update = $this->Dbo->saveData($this->getDbTable(),array(
+                    $this->getDbPrefix("status") => $newStatus
+                ), array(
+                    $this->getDbPrefix("id") => $id
+                ));
+                if($update){
+                    $this->setJsonResponse("message",($newStatus > 0 ? "Enabled" : "Disabled")." Successfully!");
+                    $this->setJsonResponse("error",false);
+                }else{
+                    $this->setJsonResponse("message","There was an error while changing status!");
+                }
+            }else{
+                $this->setJsonResponse("message","Data not exists!");
+            }
+        }else{
+            $this->setJsonResponse("message","Invalid Parameters!");
+        }
+        $this->printJsonResponse();
+    }
 }

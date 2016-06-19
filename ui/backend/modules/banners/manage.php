@@ -30,6 +30,7 @@
                             <th>S.No</th>
                             <th width="90%">Title</th>
                             <th>Image</th>
+                            <th>Status</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -45,6 +46,9 @@
                                 <a href="<?=$base_class->getUploadDir(true).$item[$base_class->getDbPrefix("image")]?>">
                                     <i class="fa fa-picture-o" aria-hidden="true"></i>
                                 </a>
+                            </td>
+                            <td>
+                                <input type="checkbox" switch-button data-action="<?= $base_class->getCtrlUrls("status", true) ?>/<?=$item[$base_class->getDbPrefix("id")]?>" class="status_btn" <?=($item[$base_class->getDbPrefix("status")] > 0 ? "checked" : "")?> />
                             </td>
                             <td class="center"><a href="<?= $base_class->getUiUrls("edit", true) ?>/<?=$item[$base_class->getDbPrefix("id")]?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
                             <td class="center"><a href="#" onclick="deleteGrid('<?=$base_class->getCtrlUrls("delete", true)?>/<?=$item[$base_class->getDbPrefix("id")]?>',this)"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>

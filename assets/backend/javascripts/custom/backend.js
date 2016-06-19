@@ -43,6 +43,19 @@ $(document).ready(function (e) {
         mainClass: 'my-mfp-zoom-in',
         modal: true
     });
+
+
+    var switches = document.querySelectorAll('[switch-button]');
+
+    for (var i = 0; i < switches.length; i++) {
+        var me = switches[i];
+        new Switchery(me,{size: 'small', color: '#0083c1'});
+        me.onchange = function() {
+            if($(me).hasClass("status_btn")){
+                statusToggle($(me).data("action"));
+            }
+        };
+    }
 });
 
 function confirmation(title,message,type,confirm_action,dismiss_action,confirm_text,dismiss_text,icon) {
@@ -121,4 +134,31 @@ function deleteGrid(del_url,me){
             }
         });
     },null,"Yes","No");
+}
+
+
+function statusToggle(del_url){
+    $.ajax({
+        url:del_url,
+        type:"get",
+        dataType:"json",
+        success:function(r){
+            new PNotify({
+                title: r.message,
+                text: 'Status Changed!',
+                type: (!r.error ? 'success' : 'error')
+            });
+            if(!r.error){
+                $(me).parent("td").parent("tr").remove();
+            }
+        },error:function(e){
+            new PNotify({
+                title: "There was an error, please try again later!",
+                text: 'Data Delete Message',
+                type: 'error'
+            });
+        },complete:function(){
+
+        }
+    });
 }

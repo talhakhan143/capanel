@@ -25,6 +25,8 @@
 <link rel="stylesheet" href="vendor/select2/select2.css" />
 <link rel="stylesheet" href="vendor/jquery-datatables-bs3/assets/css/datatables.css" />
 
+<link rel="stylesheet" href="vendor/switch-button/switch.css">
+
 <!-- Theme CSS -->
 <link rel="stylesheet" href="stylesheets/theme.css" />
 
