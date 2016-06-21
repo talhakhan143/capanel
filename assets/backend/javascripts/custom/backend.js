@@ -14,21 +14,41 @@
 
 
 $(document).ready(function (e) {
-    $('.data-table').dataTable();
 
+    $('.data-table.simple').dataTable();
+
+
+    $('.data-table.server').each(function(){
+        var url = $(this).data("source");
+        var pageNum = (typeof $(this).data("pages") != 'undefined' ? $(this).data("pages") : 6);
+        $(this).dataTable({
+            "processing": true,
+            "serverSide": true,
+            "ajax": $.fn.dataTable.pipeline( {
+                url: url,
+                pages: pageNum, // number of pages to cache,
+                complete:function(){
+                    initGridScripts();
+                }
+            })
+        });
+    });
+
+
+});
+
+function initGridScripts(){
     $(document).on("click",'a[href="#"]',function(e){
         e.preventDefault();
     });
 
     $('.light-box').magnificPopup({
-        delegate: 'a',
         type: 'image',
         closeOnContentClick: true,
         mainClass: 'mfp-img-mobile',
         image: {
             verticalFit: true
         }
-
     });
 
     $('.delete-confirmation').magnificPopup({
@@ -56,7 +76,8 @@ $(document).ready(function (e) {
             }
         };
     }
-});
+}
+
 
 function confirmation(title,message,type,confirm_action,dismiss_action,confirm_text,dismiss_text,icon) {
     title = (title != null ? title : "Title");
@@ -137,9 +158,9 @@ function deleteGrid(del_url,me){
 }
 
 
-function statusToggle(del_url){
+function statusToggle(status_url){
     $.ajax({
-        url:del_url,
+        url:status_url,
         type:"get",
         dataType:"json",
         success:function(r){
@@ -148,9 +169,6 @@ function statusToggle(del_url){
                 text: 'Status Changed!',
                 type: (!r.error ? 'success' : 'error')
             });
-            if(!r.error){
-                $(me).parent("td").parent("tr").remove();
-            }
         },error:function(e){
             new PNotify({
                 title: "There was an error, please try again later!",

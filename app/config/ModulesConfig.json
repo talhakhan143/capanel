@@ -35,7 +35,8 @@
         "add" : "create",
         "edit" : "update",
         "delete" : "delete",
-        "status" : "updateStatus"
+        "status" : "updateStatus",
+        "dataTable" : "dataTableSource"
       }
     }
   },

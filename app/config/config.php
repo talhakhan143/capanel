@@ -516,6 +516,8 @@ $config['proxy_ips'] = '';
 $modulesJson = file_get_contents(__DIR__."/ModulesConfig.json");
 $config['modules_config'] = json_decode($modulesJson);
 
+require_once(__DIR__.'/database.php');
+$config['db_info'] = $db['default'];
 //Custom Configs
 
 function __autoload($class)

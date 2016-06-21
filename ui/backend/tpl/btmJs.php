@@ -6,7 +6,6 @@
 <script src="vendor/magnific-popup/magnific-popup.js"></script>
 <script src="vendor/jquery-placeholder/jquery.placeholder.js"></script>
 
-<script src="vendor/autosize/autosize.js"></script>
 <script src="vendor/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
 
 <script src="vendor/select2/select2.js"></script>
@@ -15,6 +14,7 @@
 <script src="vendor/jquery-datatables-bs3/assets/js/datatables.js"></script>
 <script src="vendor/pnotify/pnotify.custom.js"></script>
 <script src="vendor/switch-button/switch.js"></script>
+<script src="vendor/jquery-datatables/pipeline.js"></script>
 
 <script src="javascripts/custom/backend.js"></script>
 

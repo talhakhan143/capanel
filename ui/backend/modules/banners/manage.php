@@ -24,7 +24,7 @@
                             class="fa fa-plus"></i> Add</a>
                 </header>
                 <div class="panel-body">
-                    <table class="table table-bordered table-striped mb-none data-table">
+                    <table class="table table-bordered table-striped mb-none data-table server" data-source="<?=$base_class->getCtrlUrls("dataTable", true)?>" data-pages="6">
                         <thead>
                         <tr>
                             <th>S.No</th>
@@ -36,25 +36,6 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <?php
-                        $sno = 1;
-                        foreach($gridData as $item){ ?>
-                        <tr>
-                            <td><?=$sno?></td>
-                            <td><?=$item[$base_class->getDbPrefix("title")]?></td>
-                            <td class="center light-box">
-                                <a href="<?=$base_class->getUploadDir(true).$item[$base_class->getDbPrefix("image")]?>">
-                                    <i class="fa fa-picture-o" aria-hidden="true"></i>
-                                </a>
-                            </td>
-                            <td>
-                                <input type="checkbox" switch-button data-action="<?= $base_class->getCtrlUrls("status", true) ?>/<?=$item[$base_class->getDbPrefix("id")]?>" class="status_btn" <?=($item[$base_class->getDbPrefix("status")] > 0 ? "checked" : "")?> />
-                            </td>
-                            <td class="center"><a href="<?= $base_class->getUiUrls("edit", true) ?>/<?=$item[$base_class->getDbPrefix("id")]?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
-                            <td class="center"><a href="#" onclick="deleteGrid('<?=$base_class->getCtrlUrls("delete", true)?>/<?=$item[$base_class->getDbPrefix("id")]?>',this)"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
-                        </tr>
-                        <?php $sno++;
-                        } ?>
                         </tbody>
                     </table>
                 </div>
