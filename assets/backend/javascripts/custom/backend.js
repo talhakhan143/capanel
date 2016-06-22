@@ -67,15 +67,15 @@ function initGridScripts(){
 
     var switches = document.querySelectorAll('[switch-button]');
 
-    for (var i = 0; i < switches.length; i++) {
-        var me = switches[i];
-        new Switchery(me,{size: 'small', color: '#0083c1'});
-        me.onchange = function() {
-            if($(me).hasClass("status_btn")){
+    switches.forEach(function(me) {
+        var switcher = new Switchery(me,{size: 'small', color: '#0083c1'});
+        if($(me).hasClass("status_btn")) {
+            $(me).next(".switchery").click(function(){
+                console.log($(me).data("action"));
                 statusToggle($(me).data("action"));
-            }
-        };
-    }
+            });
+        }
+    });
 }
 
 
