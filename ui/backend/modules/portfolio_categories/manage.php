@@ -29,7 +29,6 @@
                         <tr>
                             <th>S.No</th>
                             <th width="90%">Title</th>
-                            <th>Image</th>
                             <th>Status</th>
                             <th>Edit</th>
                             <th>Delete</th>

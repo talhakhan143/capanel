@@ -25,22 +25,14 @@ class ModuleDefault extends CA_Mhandler
         $this->loadCurrentView();
     }
 
-    public function getCategories(){
-        $this->initialize("portfolio_categories");
-        $this->setViewParam("portCats", $this->Dbo->getData($this->getDbTable(), "*"));
-        $this->initialize();
-    }
-
     public function add()
     {
-        $this->getCategories();
         $this->setViewParam("frmAction", $this->getCtrlUrls("add", true));
         $this->loadCurrentView();
     }
 
     public function edit($id = false)
     {
-        $this->getCategories();
         if (!$id) {
             $this->redirectToDefault();
             die();
@@ -55,11 +47,7 @@ class ModuleDefault extends CA_Mhandler
     public function create()
     {
         $this->processPostPrefix();
-        $upload = $this->uploadFile($this->getDbPrefix() . "image", $this->getUploadDir());
         $postData = $this->getPostData();
-        if (!$upload["error"]) {
-            $postData[$this->getDbPrefix() . "image"] = $upload['uploadData']["file_name"];
-        }
         $this->Dbo->saveData($this->getDbTable(), $postData);
         $this->redirectToDefault();
     }
@@ -68,17 +56,7 @@ class ModuleDefault extends CA_Mhandler
     {
         $this->processPostPrefix();
         $id = $this->getPostData()[$this->getDbPrefix("id")];
-        $upload = $this->uploadFile($this->getDbPrefix() . "image", $this->getUploadDir());
-        $curData = $this->Dbo->getData($this->getDbTable(), "*", array(
-            $this->getDbPrefix("id") => $id
-        ), false, false, false, true);
         $postData = $this->getPostData();
-        if (!$upload["error"]) {
-            $postData[$this->getDbPrefix() . "image"] = $upload['uploadData']["file_name"];
-            if (file_exists($this->getUploadDir() . $curData[$this->getDbPrefix("image")])) {
-                unlink($this->getUploadDir() . $curData[$this->getDbPrefix("image")]);
-            }
-        }
         $this->Dbo->saveData($this->getDbTable(), $postData, array(
             $this->getDbPrefix("id") => $id
         ));
@@ -96,9 +74,6 @@ class ModuleDefault extends CA_Mhandler
                     $this->getDbPrefix("id") => $id
                 ));
                 if ($del) {
-                    if (file_exists($this->getUploadDir() . $curData[$this->getDbPrefix("image")])) {
-                        unlink($this->getUploadDir() . $curData[$this->getDbPrefix("image")]);
-                    }
                     $this->setJsonResponse("message", "Deleted Successfully!");
                     $this->setJsonResponse("error", false);
                 } else {
@@ -123,30 +98,22 @@ class ModuleDefault extends CA_Mhandler
             array(
                 "dt" => 1,
                 "db" => $this->getDbPrefix("title")
-            ),
-            array(
-                "dt" => 2,
-                "db" => $this->getDbPrefix("image"),
-                "formatter" =>  function ($data, $row) {
-                    $r = ((check_not_empty($data) and file_exists($this->getUploadDir() . $data)) ? '<a href="' . $this->getUploadDir(true) . $data . '" class="light-box"><i class="fa fa-picture-o" aria-hidden="true"></i></a>' : "-");
-                    return $r;
-                }
             ),array(
-                "dt" => 3,
+                "dt" => 2,
                 "db" => $this->getDbPrefix("status"),
                 "formatter" =>  function ($data, $row) {
                     $r = '<input type="checkbox" switch-button data-action="' . $this->getCtrlUrls("status", true) . "/" . $row[0] . '" class="status_btn" ' . ($data > 0 ? "checked" : "") . ' />';
                     return $r;
                 }
             ),array(
-                "dt" => 4,
+                "dt" => 3,
                 "db" => $this->getDbPrefix("id"),
                 "formatter" =>  function ($data, $row) {
                     $r = '<a href="' . $this->getUiUrls("edit", true) . "/" . $data . '"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>';
                     return $r;
                 }
             ),array(
-                "dt" => 5,
+                "dt" => 4,
                 "db" => $this->getDbPrefix("id"),
                 "formatter" =>  function ($data, $row) {
                     $durl = "'" . $this->getCtrlUrls("delete", true) . "/" . $data . "'";
