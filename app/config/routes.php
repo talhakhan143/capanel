@@ -54,6 +54,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;  
 
 $route['capanel'] = "backend/base/login";
+$route['capanel/install'] = "backend/base/main/installRefresh";
 $route['capanel/login'] = "backend/base/login";
 $route['capanel/login/(:any)'] = "backend/base/login/$1";
 $route['capanel/module/(:any)'] = "backend/modules/$1/ModuleDefault/index";

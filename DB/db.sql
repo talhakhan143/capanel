@@ -47,6 +47,22 @@ CREATE TABLE `tbl_banners` (
 insert  into `tbl_banners`(`ban_id`,`ban_title`,`ban_image`,`ban_link`,`ban_status`) values (7,'Banner 2','2a734753a6f4b6a26fee2b6bd284d1dc.jpg','',0);
 insert  into `tbl_banners`(`ban_id`,`ban_title`,`ban_image`,`ban_link`,`ban_status`) values (9,'Banner 3','730dfbbd3d0b905d48c01171e8db7dba.png','',0);
 
+/*Table structure for table `tbl_content_pages` */
+
+DROP TABLE IF EXISTS `tbl_content_pages`;
+
+CREATE TABLE `tbl_content_pages` (
+  `cnt_id` int(11) NOT NULL AUTO_INCREMENT,
+  `cnt_title` varchar(250) NOT NULL,
+  `cnt_descp` longtext NOT NULL,
+  `cnt_status` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`cnt_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+/*Data for the table `tbl_content_pages` */
+
+insert  into `tbl_content_pages`(`cnt_id`,`cnt_title`,`cnt_descp`,`cnt_status`) values (1,'About','<p><span style=\"font-weight: bold;\"><iframe src=\"//www.youtube.com/embed/yD2iHEW09wk\" width=\"640\" height=\"360\" frameborder=\"0\"></iframe>kshfkadhfkafhkahfkhfkah <span style=\"font-style: italic;\">sasa <span style=\"background-color: rgb(99, 74, 165);\">sdsdds</span></span></span></p>',1);
+
 /*Table structure for table `tbl_port_categories` */
 
 DROP TABLE IF EXISTS `tbl_port_categories`;
@@ -83,6 +99,26 @@ CREATE TABLE `tbl_portfolio` (
 /*Data for the table `tbl_portfolio` */
 
 insert  into `tbl_portfolio`(`port_id`,`port_cat`,`port_title`,`port_image`,`port_link`,`port_status`) values (1,1,'Cyber Avanza','06c631353aaf0b52ef18b120606a2d5e.jpg','http://cyberavanza.com',1);
+
+/*Table structure for table `tbl_settings` */
+
+DROP TABLE IF EXISTS `tbl_settings`;
+
+CREATE TABLE `tbl_settings` (
+  `sett_id` int(11) NOT NULL AUTO_INCREMENT,
+  `sett_title` varchar(250) NOT NULL,
+  `sett_value` varchar(250) NOT NULL,
+  `sett_type` varchar(50) DEFAULT 'text',
+  `sett_status` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`sett_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+/*Data for the table `tbl_settings` */
+
+insert  into `tbl_settings`(`sett_id`,`sett_title`,`sett_value`,`sett_type`,`sett_status`) values (1,'Company Name','CyberAvanza','text',1);
+insert  into `tbl_settings`(`sett_id`,`sett_title`,`sett_value`,`sett_type`,`sett_status`) values (2,'Facebook URL','http://facebook.com/cyberavanza','url',1);
+insert  into `tbl_settings`(`sett_id`,`sett_title`,`sett_value`,`sett_type`,`sett_status`) values (3,'Address','Office# T1, Mateen Shoppers Gallery, PECHS, Tariq Road, Just Opp Rehmania Masjid, Karachi, Pakistan-75400 ','textarea',1);
+insert  into `tbl_settings`(`sett_id`,`sett_title`,`sett_value`,`sett_type`,`sett_status`) values (4,'Phone','+923452993669, +923368469404','tel',1);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

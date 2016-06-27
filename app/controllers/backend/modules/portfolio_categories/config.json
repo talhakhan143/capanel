@@ -1,0 +1,26 @@
+{
+  "portfolio_categories": {
+    "package": "portfolio_categories",
+    "title": "Portfolio Categories",
+    "icon": "fa fa-briefcase",
+    "db_config":{
+      "table" : "tbl_port_categories",
+      "prefix" : "pcat_"
+    },
+    "upload_dir" : "portfolio/",
+    "urls" : {
+      "ui":{
+        "manage" : "manage",
+        "add" : "add",
+        "edit" : "edit"
+      },
+      "ctrls":{
+        "add" : "create",
+        "edit" : "update",
+        "delete" : "delete",
+        "status" : "updateStatus",
+        "dataTable" : "dataTableSource"
+      }
+    }
+  }
+}

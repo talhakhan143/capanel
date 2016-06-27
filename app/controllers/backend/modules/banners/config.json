@@ -1,0 +1,19 @@
+{
+  "dashboard": {
+    "package": "dashboard",
+    "isDefault" : true,
+    "title": "Dashboard",
+    "icon": "fa fa-area-chart",
+    "db_config":{
+      "table" : "",
+      "prefix" : ""
+    },
+    "upload_dir" : "",
+    "urls" : {
+      "ui":{
+        "manage" : "manage"
+      },
+      "ctrls":{}
+    }
+  }
+}

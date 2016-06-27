@@ -1,0 +1,26 @@
+{
+  "settings": {
+    "package": "settings",
+    "title": "Settings",
+    "icon": "fa fa-cogs",
+    "db_config":{
+      "table" : "tbl_settings",
+      "prefix" : "sett_"
+    },
+    "upload_dir" : "settings/",
+    "urls" : {
+      "ui":{
+        "manage" : "manage",
+        "add" : "add",
+        "edit" : "edit"
+      },
+      "ctrls":{
+        "add" : "create",
+        "edit" : "update",
+        "delete" : "delete",
+        "status" : "updateStatus",
+        "dataTable" : "dataTableSource"
+      }
+    }
+  }
+}

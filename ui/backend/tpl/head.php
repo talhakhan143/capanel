@@ -20,7 +20,8 @@
 <link rel="stylesheet" href="vendor/bootstrap-datepicker/css/datepicker3.css" />
 <link rel="stylesheet" href="vendor/pnotify/pnotify.custom.css" />
 <link rel="stylesheet" href="vendor/bootstrap-fileupload/bootstrap-fileupload.min.css" />
-
+<link rel="stylesheet" href="vendor/summernote/summernote.css" />
+<link rel="stylesheet" href="vendor/summernote/summernote-bs3.css" />
 
 <link rel="stylesheet" href="vendor/select2/select2.css" />
 <link rel="stylesheet" href="vendor/jquery-datatables-bs3/assets/css/datatables.css" />

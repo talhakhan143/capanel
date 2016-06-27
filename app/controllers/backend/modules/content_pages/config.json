@@ -1,0 +1,26 @@
+{
+  "content_pages": {
+    "package": "content_pages",
+    "title": "Content Pages",
+    "icon": "fa fa-file-text-o",
+    "db_config":{
+      "table" : "tbl_content_pages",
+      "prefix" : "cnt_"
+    },
+    "upload_dir" : "content_pages/",
+    "urls" : {
+      "ui":{
+        "manage" : "manage",
+        "add" : "add",
+        "edit" : "edit"
+      },
+      "ctrls":{
+        "add" : "create",
+        "edit" : "update",
+        "delete" : "delete",
+        "status" : "updateStatus",
+        "dataTable" : "dataTableSource"
+      }
+    }
+  }
+}

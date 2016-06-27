@@ -13,5 +13,10 @@ class Main extends CA_Capanel{
         parent::__construct();
     }
 
-    
+    public function installRefresh(){
+        if(file_exists(__DIR__."/../../../config/temp_configs.capanel")){
+            unlink(__DIR__."/../../../config/temp_configs.capanel");
+            redirect(base_url("capanel"));
+        }
+    }
 }

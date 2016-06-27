@@ -513,8 +513,23 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 //Custom Configs
-$modulesJson = file_get_contents(__DIR__."/ModulesConfig.json");
-$config['modules_config'] = json_decode($modulesJson);
+if(!file_exists(__DIR__."/temp_configs.capanel")){
+    $appDirRoot = __DIR__."/..";
+    $moduleDir = $appDirRoot."/controllers/backend/modules";
+
+    $modulesDirs = scandir($moduleDir);
+
+    $json_configs = array();
+
+    foreach($modulesDirs as $dir){
+        if(file_exists($moduleDir."/".$dir."/config.json")){
+            $moduleConf = json_decode(file_get_contents($moduleDir."/".$dir."/config.json"),true);
+            $json_configs = array_merge($json_configs,$moduleConf);
+        }
+    }
+    file_put_contents(__DIR__."/temp_configs.capanel",json_encode($json_configs));
+}
+$config['modules_config'] = json_decode(file_get_contents(__DIR__."/temp_configs.capanel"));
 
 require_once(__DIR__.'/database.php');
 $config['db_info'] = $db['default'];
